@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    overflow: hidden;
+}
+
+#add-to-home-screen-button { display: none; }
+#settings-panel { display: none; }
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Adjust max-width as needed for responsiveness */
+    text-align: center;
+    padding: 30px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+h1 {
+    margin: 0 0 20px;
+    color: #61dafb;
+    font-size: 28px;
+}
+
+.task-input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#new-task {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #61dafb;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: border-color 0.3s, transform 0.3s;
+    background: #f9f9f9;
+    color: #333;
+    width: calc(100% - 120px); /* Adjust width for smaller screens */
+}
+
+#new-task:focus {
+    border-color: #50b8f2;
+    outline: none;
+}
+
+#add-task-button {
+    padding: 12px 20px;
+    border: none;
+    background: #61dafb;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.3s;
+    width: 100px; /* Adjust width for smaller screens */
+}
+
+#add-task-button:hover {
+    background: #50b8f2;
+    transform: scale(1.05);
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-item button {
+    border: none;
+    background: #e64946;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 14px;
+    transition: background 0.3s;
+    margin-left: 8px;
+}
+
+.task-item button:hover {
+    background: #c9302c;
+}
+
+.task-item .edit-button {
+    background: #f0ad4e;
+}
+
+.task-item .edit-button:hover {
+    background: #ec971f;
+}
+
+.task-item .complete-button {
+    background: #5bc0de;
+}
+
+.task-item .complete-button:hover {
+    background: #46b8da;
+}
+
+.completed span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+#add-to-home-screen-button {
+    display: none;
+    padding: 12px 20px;
+    border: none;
+    background: #61dafb;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+#add-to-home-screen-button:hover {
+    background: #50b8f2;
+}
+/* Floating Action Button */
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #61dafb;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.fab:hover {
+    background-color: #50b8f2;
+    transform: scale(1.1);
+}
+
+.fab i {
+    font-size: 24px;
+}
+
+/* Settings Panel */
+.settings-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+}
+
+.settings-panel h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.settings-panel label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.settings-panel input[type="color"] {
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.settings-panel select {
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

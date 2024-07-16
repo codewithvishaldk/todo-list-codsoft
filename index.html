@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Task List</h1>
+        <div class="task-input">
+            <input type="text" id="new-task" placeholder="Add a new task...">
+            <button id="add-task-button">Add Task</button>
+        </div>
+        <ul id="task-list"></ul>
+    </div>
+<div class="fab" onclick="toggleSettingsPanel()">
+    <i class="fas fa-paint-brush"></i>
+</div>
+
+<!-- Settings Panel -->
+<div id="settings-panel" class="settings-panel">
+    <h3>Customize Appearance</h3>
+    <label for="font-color">Font Color:</label>
+    <input type="color" id="font-color" onchange="changeFontColor(this.value)">
+    <br>
+    <label for="bg-color">Background Color:</label>
+    <input type="color" id="bg-color" onchange="changeBackgroundColor(this.value)">
+    <br>
+    <label for="font-family">Font Family:</label>
+    <select id="font-family" onchange="changeFontFamily(this.value)">
+        <option value="Roboto, sans-serif">Roboto</option>
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Verdana, sans-serif">Verdana</option>
+        <option value="Georgia, serif">Georgia</option>
+    </select>
+</div>
+
+
+<script src="script.js"></script>
+</html>
